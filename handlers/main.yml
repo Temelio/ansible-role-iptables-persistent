@@ -1,0 +1,8 @@
+---
+
+# Handlers main file for iptables-persistent role
+- name: 'HANDLER | Restart firewall'
+  become: True
+  service:
+    name: "{{ ipersist_service_name }}"
+    state: 'restarted'

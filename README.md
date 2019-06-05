@@ -1,10 +1,10 @@
 # iptables-persistent
 
 [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://travis-ci.org/Temelio/ansible-role-iptables-persistent.svg?branch=master)](https://travis-ci.org/Temelio/ansible-role-iptables-persistent)
+[![Build Status](https://travis-ci.com/Temelio/ansible-role-iptables-persistent.svg?branch=master)](https://travis-ci.com/Temelio/ansible-role-iptables-persistent)
 [![Updates](https://pyup.io/repos/github/Temelio/ansible-role-iptables-persistent/shield.svg)](https://pyup.io/repos/github/Temelio/ansible-role-statsd/)
 [![Python 3](https://pyup.io/repos/github/Temelio/ansible-role-iptables-persistent/python-3-shield.svg)](https://pyup.io/repos/github/Temelio/ansible-role-statsd/)
-[![Ansible Role](https://img.shields.io/ansible/role/.svg)](https://galaxy.ansible.com/Temelio/statsd/)
+[![Ansible Role](https://img.shields.io/ansible/role/40953.svg)](https://galaxy.ansible.com/Temelio/iptables_persistent/)
 [![GitHub tag](https://img.shields.io/github/tag/Temelio/ansible-role-iptables-persistent.svg)](https://github.com/Temelio/ansible-role-iptables-persistent/tags)
 
 Install iptables-persistent package.

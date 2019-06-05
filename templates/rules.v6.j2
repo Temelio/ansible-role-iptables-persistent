@@ -1,0 +1,26 @@
+{{ ansible_managed | comment }}
+
+{% if ipersist_variables6 | bool %}
+# Variables
+#------------------------------------------------------------------------------
+{{ ipersist_variables6 }}
+
+{% endif %}
+
+{% if ipersist_functions6 | bool %}
+# Fuctions
+#------------------------------------------------------------------------------
+{{ ipersist_functions6 }}
+
+{% endif %}
+
+# Rules
+#------------------------------------------------------------------------------
+{{ ipersist_rules6 }}
+
+{% if ipersist_hooks6 | bool %}
+# Hooks
+#------------------------------------------------------------------------------
+
+{{ ipersist_hooks6 }}
+{% endif %}

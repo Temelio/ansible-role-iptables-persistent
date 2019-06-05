@@ -1,0 +1,33 @@
+---
+
+# Defaults vars file for iptables-persistent role
+ansible_os_family: 'Debian'
+ipersist_enable_ipv4: True
+ipersist_enable_ipv6: False
+
+# Repository management
+ipersist_repository_cache_valid_time: 3600
+ipersist_repository_update_cache: True
+
+# Packages management
+ipersist_packages: "{{ _ipersist_packages }}"
+
+# Service management
+ipsersist_service_enabled: True
+ipersist_service_name: "{{ _ipersist_service_name }}"
+
+# Paths management
+ipersist_config_directory: '/etc/iptables'
+ipersist_config_files_owner: 'root'
+ipersist_config_files_group: 'root'
+ipersist_config_files_mode: '0400'
+
+# Configuration
+# ------------------------------------------------------------------------------
+ipersist_variables: None
+ipersist_functions: None
+# IPV4
+ipersist_rules_filter: "{{ _ipersist_rules_filt }}"
+ipersist_rules_input: "{{ _ipersist_rules_inp }}"
+# IPV6
+ipersist_rules6: "{{ _ipersist_rules6 + [COMMIT]}}"

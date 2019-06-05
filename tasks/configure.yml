@@ -1,0 +1,24 @@
+---
+- name: 'CONFIG | create /etc/iptables/rules.v4'
+  become: yes
+  template:
+    src: "{{ role_path }}/templates/rules.v4.j2"
+    dest: "{{ ipersist_config_directory }}/rules.v4"
+    owner: "{{ ipersist_config_files_owner }}"
+    group: "{{ ipersist_config_files_group }}"
+    mode: "{{ ipersist_config_files_mode }}"
+    validate: 'iptables-restore --test %s'
+  when: (ipersist_enable_ipv4 | bool)
+  notify: 'HANDLER | Restart firewall'
+
+- name: 'CONFIG | create /etc/iptables/rules.v6'
+  become: yes
+  template:
+    src: "{{ role_path }}/templates/rules.v6.j2"
+    dest: "{{ ipersist_config_directory }}/rules.v6"
+    owner: "{{ ipersist_config_files_owner }}"
+    group: "{{ ipersist_config_files_group }}"
+    mode: "{{ ipersist_config_files_mode }}"
+    validate: 'ip6tables-restore --test %s'
+  when: (ipersist_enable_ipv6 | bool)
+  notify: 'HANDLER | Restart firewall'

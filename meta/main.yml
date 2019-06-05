@@ -1,0 +1,22 @@
+---
+
+galaxy_info:
+  role_name: 'iptables-persistent'
+  author: 'Lise Machetel'
+  description: 'Ansible role to install and configure iptables-persistent'
+  company: 'Temelio (https://temelio.com)'
+  license: 'MIT'
+  min_ansible_version: '2.4'
+  github_branch: 'master'
+  platforms:
+    - name: 'Debian'
+      versions:
+        - 'stretch'
+    - name: 'Ubuntu'
+      versions:
+        - 'trusty'
+        - 'xenial'
+        - 'bionic'
+  galaxy_tags:
+    - 'system'
+dependencies: []
