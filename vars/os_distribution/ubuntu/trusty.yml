@@ -1,0 +1,4 @@
+---
+
+# Service management
+_ipersist_service_name: 'iptables-persistent'

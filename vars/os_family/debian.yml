@@ -1,0 +1,42 @@
+---
+
+# Debian OS family specific vars
+
+# Package management
+_ipersist_packages:
+  - name: 'iptables'
+  - name: 'iptables-persistent'
+
+# Service management
+_ipersist_service_name: 'netfilter-persistent'
+
+# Configuration
+_ipersist_rules_filt: |
+  *filter
+  :INPUT DROP [0:0]
+  :FORWARD DROP [0:0]
+  :OUTPUT ACCEPT [0:0]
+_ipersist_rules_inp: |
+  ##
+  # INPUT
+  ##
+  # Allow locahost
+  -A INPUT -i lo -j ACCEPT
+  # Allow established connections
+  -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+  # Allow ICMP ping
+  -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+  # # SSH
+  -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+_ipersist_rules6: |
+  *filter
+  :INPUT DROP [0:0]
+  :FORWARD DROP [0:0]
+  :OUTPUT ACCEPT [0:0]
+  ##
+  # INPUT
+  ##
+  # Allow locahost
+  -A INPUT -i lo -j ACCEPT
+  # Allow established connections
+  -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT

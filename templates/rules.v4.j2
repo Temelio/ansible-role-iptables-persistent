@@ -1,0 +1,39 @@
+{{ ansible_managed | comment }}
+
+{% if ipersist_variables != 'None' %}
+# Variables
+#------------------------------------------------------------------------------
+{{ ipersist_variables }}
+
+{% endif %}
+
+
+{% if ipersist_functions != 'None' %}
+# Fuctions
+#------------------------------------------------------------------------------
+{{ ipersist_functions }}
+
+{% endif %}
+
+
+{% if ipersist_rules_nat is defined %}
+# Nat
+#------------------------------------------------------------------------------
+{{ ipersist_rules_nat }}
+
+{% endif %}
+
+# Rules
+#------------------------------------------------------------------------------
+{{ ipersist_rules_filter }}
+{{ ipersist_rules_input }}
+
+
+{% if ipersist_rules_forward is defined %}
+# Chain forward
+#------------------------------------------------------------------------------
+{{ ipersist_rules_forward }}
+
+{% endif %}
+
+COMMIT

@@ -1,0 +1,15 @@
+---
+- name: 'INSTALL | remove ferm package'
+  apt:
+    name: 'ferm'
+    state: 'absent'
+    update_cache: "{{ ipersist_repository_update_cache }}"
+    cache_valid_time: "{{ ipersist_repository_cache_valid_time }}"
+
+- name: 'INSTALL | install iptables and iptables-persistent packages'
+  apt:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('present') }}"
+    update_cache: "{{ ipersist_repository_update_cache }}"
+    cache_valid_time: "{{ ipersist_repository_cache_valid_time }}"
+  with_items: "{{ ipersist_packages }}"
