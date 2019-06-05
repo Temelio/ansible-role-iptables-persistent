@@ -1,6 +1,7 @@
 ---
 
 galaxy_info:
+  role_name: 'iptables-persistent'
   author: 'Lise Machetel'
   description: 'Ansible role to install and configure iptables-persistent'
   company: 'Temelio (https://temelio.com)'
